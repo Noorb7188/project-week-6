@@ -1,0 +1,19 @@
+{
+  "name": "project-week-6",
+  "version": "1.0.0",
+  "description": "week-6-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noorb7188/project-week-6.git"
+  },
+  "author": "Noor Bohsas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noorb7188/project-week-6/issues"
+  },
+  "homepage": "https://github.com/Noorb7188/project-week-6#readme"
+}
