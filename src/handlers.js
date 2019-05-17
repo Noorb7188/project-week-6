@@ -1,8 +1,8 @@
 const { readFile } = require('fs');
 const path = require('path');
 const querystring = require('querystring');
-const getData = require('./queries/getData.js');
-const postData = require('./queries/postData.js');
+const showData = require('./queries/showData.js');
+const addData = require('./queries/addData.js');
 //const users = require('./static');
 
 const serverError = (err, response) => {
@@ -21,7 +21,7 @@ const homeHandler = response => {
 };
 
 const getUsersHandler = response => {
-getData((err, res) => {
+showData((err, res) => {
   if (err) return console.log(err);
   let userData = JSON.stringify(res);
   response.writeHead(200, {'Content-Type': 'application/json'});
@@ -38,7 +38,7 @@ request.on('end', () => {
   const convertedData = querystring.parse(allData);
   let name = convertedData.name;
   let location = convertedData.location;
-  postData(name, location, err => {
+  addData(name, location, err => {
     if (err) {
       console.log('my error is ', err);
     } else {
