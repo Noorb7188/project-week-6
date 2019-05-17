@@ -4,7 +4,9 @@
   "description": "week-6-project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Noorb7188/project-week-6/issues"
   },
-  "homepage": "https://github.com/Noorb7188/project-week-6#readme"
+  "homepage": "https://github.com/Noorb7188/project-week-6#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "pg": "^7.11.0"
+  }
 }

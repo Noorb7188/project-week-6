@@ -10,7 +10,7 @@ const router = (request, response) => {
 
   if (url === '/') {
     homeHandler(response);
-  } else if (url === '/users') {
+  } else if (url === '/add-book') {
     getUsersHandler(response);
   } else if (url.includes('public')) {
     publicHandler(url, response);
