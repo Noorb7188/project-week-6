@@ -3,21 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>noor-project-week-6</title>
-    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
-    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="public/style.css">
   </head>
   <body>
     <h1>Share your favorite book</h1>
-    <form class="form" action="/add-book" method="post">
-      <input type="text" name="user" value="" placeholder="your name here">
-      <input type="text" name="bookName" value="" placeholder="name of the book">
-      <input type="text" name="author" value="" placeholder="name of the author">
-      <button type="submit" name="button"> Add book </button>
+    <form class="form" action="/add-place" method="post">
+      <input id="name" type="text" name="user" value="" placeholder="your name here">
+      <input id="placeName" type="text" name="placeName" value="" placeholder="name of the place">
+      <input id="rating" type="text" name="rating" value="" placeholder="your rating">
+      <button id="button" type="submit" name="button"> Add book </button>
     </form>
     <div class="data">
     </div>
-    <script type="text/javascript" src="./main.js">
-
-    </script>
+    <script type="text/javascript" src="public/main.js"></script>
   </body>
 </html>
