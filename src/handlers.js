@@ -3,7 +3,7 @@ const path = require('path');
 const querystring = require('querystring');
 const showData = require('./queries/showData.js');
 const addData = require('./queries/addData.js');
-//const users = require('./static');
+const url = require('url');
 
 const serverError = (err, response) => {
   response.writeHead(500, 'Content-Type:text/html');
@@ -21,31 +21,38 @@ const homeHandler = response => {
 };
 
 const getUsersHandler = response => {
-showData((err, res) => {
+showData((err, users) => {
   if (err) return console.log(err);
-  let userData = JSON.stringify(res);
+  let userData = JSON.stringify(users);
+  console.log('my userData from showdata:', userData);
   response.writeHead(200, {'Content-Type': 'application/json'});
   response.end(userData);
 });
 };
-
+//create function isnt getting the url of the request :(
 const createUserHandler = (request, response) => {
+  console.log('my requset url:', request.url);
+  console.log('parsed url', url.parse(request.url));
 let allData = '';
 request.on('data', chunkData => {
+  console.log('chunkData is ', chunkData);
   allData+= chunkData;
 });
 request.on('end', () => {
+  console.log('my all data', allData);
   const convertedData = querystring.parse(allData);
-  let name = convertedData.name;
-  let location = convertedData.location;
-  addData(name, location, err => {
+  console.log('my data from handler', convertedData);
+  let name = convertedData.userName;
+  let location = convertedData.placeName;
+  let rating = convertedData.rating;
+  addData(name, err => {
     if (err) {
       console.log('my error is ', err);
     } else {
       response.writeHead(302, {'Location': '/'});
       response.end()
     }
-  })
+  });
  });
 };
 
@@ -65,7 +72,7 @@ const publicHandler = (url, response) => {
   });
 };
 
-const errorHandler = response => {
+const errorHandler = (err, response) => {
   response.writeHead(404, { 'content-type': 'text/html' });
   response.end('<h1>404 Page Requested Cannot be Found</h1>');
 };
