@@ -1,24 +1,25 @@
-# project-week-6
-week-6-project
-heroku link - thats not working- !(https://noor-week-6.herokuapp.com/)
-* first i created my file tree
-* then finished with the html and server files so i can code easier and clearer
-* i make a db in heroku and used the url in .env file
-* start with createing the tables in postgresql from the terminal so i can update them using my database queries
-* my tables are :
-1- users (user_id, username) = where user_id is the primary key
-2- places (place_id, place_name) = where place_id is the primary key
-3- ratings (u_id, p_id, rating) = where u_id and p_id are a composed primary key made of 2 foreign keys
+# Recomending places with Rating
 
-the issue is that i am not able to see my url in the handler (the one i composed using the fetch!)
+heroku link - that I took the url of the database from - !(https://noor-week-6.herokuapp.com/) (The link is not working :cry: )  
 
-and im keep having this error of
-"[Error: ENOENT: no such file or directory, open '/home/noor7188/Lotus/week-6/project-week-6/add-place?userName=saf&placeName=&rating=']
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path:
-   '/home/noor7188/Lotus/week-6/project-week-6/add-place?userName=testname&placeName=testplace&rating=2' }
-"
+* first I created my file tree :
+   - the public files for the client side
+   - src folder for the server side
 
-damn ! :(
+
+* I finished with the html and server files so I can code easier and clearer.
+* I make a databaseb in heroku and used the url in .env file
+* start with createing the tables in postgresql from the terminal so I can update them using my database queries
+* my tables are :  
+  1- users (user_id, username) = where user_id is the primary key  
+  2- places (place_id, place_name) = where place_id is the primary key  
+  3- ratings (u_id, p_id, rating) = where u_id and p_id are a composed primary key made of 2 foreign keys
+
+* I worked on the `sign up` and `log in` pages , where in the `sign up` when you register the hashed pass word in added to the users table and a cookie set in the browser using `bcrypt`, `jwt`
+* In the `log in ` I want to see the password in the database for that user if it's valid to I can "send" him to the form where he can add the data of recommending the places :smile:
+
+
+
+  - It's been hell of weeks- I managed to learn the databse materials by my own - while having some issues at home
+  I'm very satisfied with where am at !
+  I really want to improve myself more and read more about sertain materials => it's just a matter of time ! :confused: 
