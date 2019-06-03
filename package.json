@@ -4,7 +4,7 @@
   "description": "week-6-project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test node tests/db_tests.js | tap-spec",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js"
   },
@@ -19,7 +19,14 @@
   },
   "homepage": "https://github.com/Noorb7188/project-week-6#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.4.0",
+    "data-store": "^3.1.0",
     "dotenv": "^8.0.0",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^7.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

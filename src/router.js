@@ -3,16 +3,30 @@ const {
   getUsersHandler,
   publicHandler,
   createUserHandler,
-  errorHandler
+  errorHandler,
+  loginHandler,
+  signUpHandler,
+  signUpFormHandler,
+  addDataHandler,
+  loginFormHandler
 } = require('./handlers');
 
 const router = (request, response) => {
-  const { url } = request;
-
+  const { url, method } = request;
   if (url === '/') {
     homeHandler(response);
   } else if (url === '/places') {
     getUsersHandler(response);
+  } else if (url === '/signupform') {
+    signUpFormHandler(request, response);
+  } else if (url === '/signup') {
+    signUpHandler(request, response);
+  } else if (url === '/login') {
+    loginHandler(request, response);
+  } else if (url === '/add-data') {
+    addDataHandler(request, response);
+  }else if (url === '/loginform') {
+    loginFormHandler(request, response);
   } else if (url === '/add-place') {
     createUserHandler(request, response);
   } else if (url.includes('public')) {
